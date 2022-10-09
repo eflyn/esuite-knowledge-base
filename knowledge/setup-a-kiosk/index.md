@@ -1,6 +1,12 @@
+[_metadata_:title]:- 'Setup a Kiosk'
+[_metadata_:description]:- "Learn how to setup a new Kiosk and connect it to your E Suite."
+[_metadata_:author]:- "Dawar Rashid"
+[_metadata_:tags]:- "kiosk setup,new kiosk,kiosks,hardware"
+[_metadata_:date]:- "October 9 2022"
 # How to Setup a Kiosk on E Suite
 #### In this article you will learn how to setup a new kiosk on the E Suite platform.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q3pgJmRSvqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Get your hardware ready
 
