@@ -32,7 +32,7 @@ async function main() {
       }
     }), 4)
   ).subscribe((data) => {
-    writeFile('knowledge.json', JSON.stringify(data, null, 2));
+    writeFile('dist/knowledge.json', JSON.stringify(data, null, 2));
   });
 
 
