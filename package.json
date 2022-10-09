@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "rm -rdf dist; mkdir -p dist; node scripts/publish.mjs && git add . && git commit -m \"published on `date`\"; npm run publish:upload",
-    "publish:upload": "aws s3 sync ./dist s3://myeflyn/knowledge/main  --endpoint=\"https://nyc3.digitaloceanspaces.com\"  --acl public-read"
+    "publish:upload": "aws s3 sync ./dist s3://myeflyn/knowledge/`git symbolic-ref --short HEAD`  --endpoint=\"https://nyc3.digitaloceanspaces.com\"  --acl public-read"
   },
   "keywords": [],
   "author": "",
