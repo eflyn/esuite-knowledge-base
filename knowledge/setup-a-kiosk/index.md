@@ -12,7 +12,7 @@
 
 1) Make sure your kiosk is plugged in and turned on.
 2) You will need an active internet connection to setup your kiosk. Confirm that there is either Wi-Fi or Ethernet connectivity available on the unit before continuing. You can refer to [this article](https://support.microsoft.com/en-us/windows/setting-up-a-wireless-network-in-windows-97914e31-3aa4-406d-cef6-f1629e2c3721#:~:text=your%20wireless%20network-,In%20Windows%2010,instructions%20if%20there%20are%20any.) for help with setting up your connection.
-3) Make sure to download and install the latest version of E Suite Platform on your kiosk. You can find the download link under [Settings.]({{ DASHBOARD_URL }}/settings).
+3) Make sure to download and install the latest version of E Suite Platform on your kiosk. You can find the download link under [Settings]({{ DASHBOARD_URL }}/settings).
 
 <br><br>
 ### Create a new Kiosk profile
