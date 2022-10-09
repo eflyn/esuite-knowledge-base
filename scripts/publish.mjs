@@ -1,7 +1,7 @@
 /*
 Publish traverses the knowledge directory and generates a JSON output of all articles.
  */
-import { readdir, readFile, writeFile } from 'fs/promises'
+import { readdir, readFile, writeFile, cp } from 'fs/promises'
 import { Subject, of, mergeMap } from 'rxjs';
 import { join } from 'path';
 import { write } from 'fs';
@@ -31,8 +31,9 @@ async function main() {
         date: new Date(metadata.date),
       }
     }), 4)
-  ).subscribe((data) => {
-    writeFile('dist/knowledge.json', JSON.stringify(data, null, 2));
+  ).subscribe(async(data) => {
+    await writeFile('dist/knowledge.json', JSON.stringify(data, null, 2));
+    await cp('./knowledge', './dist/knowledge', {recursive: true});
   });
 
 
