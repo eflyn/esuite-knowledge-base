@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "node scripts/publish.mjs && git add . && git commit -m \"published on `date`\";"
   },
   "keywords": [],
   "author": "",

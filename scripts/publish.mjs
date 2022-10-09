@@ -1,9 +1,10 @@
 /*
 Publish traverses the knowledge directory and generates a JSON output of all articles.
  */
-import { readdir, readFile } from 'fs/promises'
+import { readdir, readFile, writeFile } from 'fs/promises'
 import { Subject, of, mergeMap } from 'rxjs';
 import { join } from 'path';
+import { write } from 'fs';
 async function main() {
 
   const getDirectories = async source =>
@@ -30,7 +31,11 @@ async function main() {
         date: new Date(metadata.date),
       }
     }), 4)
-  ).subscribe(console.log);
+  ).subscribe((data) => {
+    writeFile('knowledge.json', JSON.stringify(data, null, 2));
+  });
+
+
 
 }
 
