@@ -6,12 +6,8 @@ import { Subject, of, mergeMap } from 'rxjs';
 import { join } from 'path';
 import { write } from 'fs';
 import { marked } from 'marked';
+import { getDirectories } from './util/get-directories.mjs';
 async function main() {
-
-  const getDirectories = async source =>
-    (await readdir(source, { withFileTypes: true }))
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
 
   const list = await getDirectories('./knowledge');
 

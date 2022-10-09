@@ -5,12 +5,8 @@ import { readdir, readFile, writeFile, cp } from 'fs/promises'
 import { Subject, of, mergeMap } from 'rxjs';
 import { join } from 'path';
 import { write } from 'fs';
+import { getMetadata } from './util/get-metadata.mjs';
 async function main() {
-
-  const getDirectories = async source =>
-    (await readdir(source, { withFileTypes: true }))
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
 
   const list = await getDirectories('./knowledge');
 
@@ -22,15 +18,10 @@ async function main() {
     mergeMap((async (folder) => {
       const articlePath = join('./knowledge', folder, 'index.md');
       const article = await readFile(articlePath, 'utf8');
-      const metadata = {};
-      for (const metadataStr of article.matchAll(/^\[_metadata_:(.*)?/gm)) {
-        const [key, value] = metadataStr[0].split('_metadata_:')[1].split(']:- ');
-        metadata[key] = eval(value); // quick and dirty way to remove single or double-quotes
-      }
+      const metadata = getMetadata(article);
       return {
         ...metadata,
         handle: folder,
-        date: new Date(metadata.date),
       }
     }), 4)
   ).subscribe({
