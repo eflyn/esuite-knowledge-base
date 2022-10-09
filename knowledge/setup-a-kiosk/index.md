@@ -7,14 +7,14 @@
 #### In this article you will learn how to setup a new kiosk on the E Suite platform.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q3pgJmRSvqM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<br><br>
 ### Get your hardware ready
 
 1) Make sure your kiosk is plugged in and turned on.
 2) You will need an active internet connection to setup your kiosk. Confirm that there is either Wi-Fi or Ethernet connectivity available on the unit before continuing. You can refer to [this article](https://support.microsoft.com/en-us/windows/setting-up-a-wireless-network-in-windows-97914e31-3aa4-406d-cef6-f1629e2c3721#:~:text=your%20wireless%20network-,In%20Windows%2010,instructions%20if%20there%20are%20any.) for help with setting up your connection.
 3) Make sure to download and install the latest version of E Suite Platform on your kiosk. You can find the download link under [Settings.]({{ DASHBOARD_URL }}/settings).
 
-
+<br><br>
 ### Create a new Kiosk profile
 
 1) To setup a new Kiosk in E Suite visit [this page.]({{ DASHBOARD_URL }}/kiosks/new)
@@ -26,7 +26,7 @@
 4) Click the create button and wait for the kiosk to be ready.  
 5) Once the kiosk is ready you can select an application from E Suite to run automatically.
 
-
+<br><br>
 ### Activate your Kiosk
 
 1) The final step is to connect the new Kiosk profile you just created with your Kiosk hardware. To do this right-click on the E Suite icon in your tray and click Open Admin. The default password is "3274".
