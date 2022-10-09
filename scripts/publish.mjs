@@ -16,6 +16,8 @@ async function main() {
 
   const dataStream$ = of(...list);
 
+  const data = [];
+
   dataStream$.pipe(
     mergeMap((async (folder) => {
       const articlePath = join('./knowledge', folder, 'index.md');
@@ -31,9 +33,12 @@ async function main() {
         date: new Date(metadata.date),
       }
     }), 4)
-  ).subscribe(async(data) => {
-    await writeFile('dist/knowledge.json', JSON.stringify(data, null, 2));
-    await cp('./knowledge', './dist/knowledge', {recursive: true});
+  ).subscribe({
+    next: (d) => data.push(d),
+    complete: async () => {
+      await writeFile('dist/knowledge.json', JSON.stringify(data, null, 2));
+      await cp('./knowledge', './dist/knowledge', {recursive: true});
+    }
   });
 
 
