@@ -6,6 +6,7 @@ import { Subject, of, mergeMap } from 'rxjs';
 import { join } from 'path';
 import { write } from 'fs';
 import { getMetadata } from './util/get-metadata.mjs';
+import { getDirectories } from './util/get-directories.mjs';
 async function main() {
 
   const list = await getDirectories('./knowledge');
