@@ -35,7 +35,7 @@ async function main() {
       });
       const toc = marked(markdownToc(article, {
         firsth1: false,
-        bullets: ['<br>', '<br>‣', '&nbsp;&nbsp;<br>‣', '<br>&nbsp;&nbsp;&nbsp;&nbsp;‣']
+        bullets: ['<br>', '<br>&nbsp;&nbsp;‣', '<br>&nbsp;&nbsp;&nbsp;&nbsp;‣', '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;‣']
       }).content);
       await writeFile(htmlPath, `<!doctype html>
 <html>
@@ -51,19 +51,24 @@ async function main() {
             border: 3px solid #d6d6d6;
             margin: auto;
             }
+            iframe {
+            max-width: 100%;
+            }
         </style>
     </head>
     <body>
     <div class="container py-5">
     <div class="row">
     
-    <div class="col">
+    <div class="col-12 ${toc?.length ? 'col-lg-9' : ''} order-2 order-lg-1">
         ${marked(article)}
     </div>
     ${(() => {
-        return toc?.length ? `<div class="col-3 bg-light py-4">
-          <h4>Table of Contents</h4>
+        return toc?.length ? `<div class="col-12 col-lg-3 order-1 order-lg-2">
+          <div class="py-3" style="position: sticky; top: 0;">
+          <h5>Table of Contents</h5>
           ${toc}
+          </div>
         </div>` : '';
     })()}
 </div>
