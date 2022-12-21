@@ -27,4 +27,4 @@ In this article you will see just how quickly and easily you can setup a Custom 
    - ***Upload*** Drag and drop a ZIP archive containing your app onto the dropzone under the "Upload" tab.
 6) Now that your application is ready to run all you need to do is enable it on your kiosks! Head over to the [Kiosks]({{ DASHBOARD_URL }}/kiosks) page and select your new Custom App from the activation dropdown next to the Kiosk you want to run it on.
 
-Now you know how to quickly and easily add Custom Apps to your E Suite backend.
+Now you know how to quickly and easily add Custom Apps to your E Suite backend. If you need assistance with anything in this article please do not hesitate to contact us!
