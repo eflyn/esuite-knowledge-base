@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "new": "node ./scripts/new.mjs",
     "preview": "rm -rdf preview; mkdir -p preview; node scripts/preview.mjs",
-    "publish": "rm -rdf dist; mkdir -p dist; node scripts/publish.mjs && git add . && git commit -m \"published on `date`\"; npm run publish:upload",
-    "publish:upload": "aws s3 sync ./dist s3://myeflyn/knowledge/`git symbolic-ref --short HEAD`  --endpoint=\"https://nyc3.digitaloceanspaces.com\"  --acl public-read"
+    "build": "rm -rdf dist; mkdir -p dist; node scripts/publish.mjs",
+    "publish": "npm run build && git add . && git commit -m \"published on `date`\"; npm run publish:upload",
+    "publish:ci": "aws s3 sync ./dist s3://myeflyn/knowledge/`GITHUB_REF_NAME`  --endpoint=\"https://nyc3.digitaloceanspaces.com\"  --acl public-read"
   },
   "keywords": [],
   "author": "",
